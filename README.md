@@ -1,8 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+👋 Thanks for your consideration. This project is a simple payment flow built on Next.js.
 
-## Getting Started
+View the project live: https://apayan-cedar-test.netlify.app/payment
 
-First, run the development server:
+You can also pull and run locally.
+First, run `npm install`, then run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +17,17 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+***
 
-## Learn More
+### Call outs:
+* I extracted common components and regions from the figma into components that a developer can compose together. See the `/app/components` directory for examples, like `Input`, `Button`, and `FormField`
+* Most of the page files where these components are used are located in `app/payment/` directory.
+* The payment form validates not only requirement, but also formatting for credit card numbers, expiration date, and security code.
+* You can manipulate the data in `app/data.json` to see content changes in real time, including the members name, amount of bills, and the total outstanding payment.
 
-To learn more about Next.js, take a look at the following resources:
-
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Cut for time:
+* I would love to automatically format certain values in the form, like adding spaces for the credit card number, or adding a slash in between the date parts of the expiration. These little details always delight me as a user when I encounter them in the wild. Putting in payment information is always one of the most annoying things you can do online—any little delight helps!
+* In the real world, I might work with design to figure out a way for the error message below each field to not cause the inputs below to move down when they appear. It's a little jarring when an error appears—not a bit deal though.
+* I wasn't able to fit unit tests into the time allotted. Would ideally like to unit test the form validation rules primarily.
+* I used a mix of Tailwind and CSS Modules, mostly for time as I am more familiar with CSS Modules, but in a production environment this could use some finessing, perhaps more adoption of one system over the other.
