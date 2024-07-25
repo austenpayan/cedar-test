@@ -1,30 +1,24 @@
 import { FormField } from "@/components/form-field";
 import { Input } from "@/components/input";
 import Button from "@/components/button";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import {
+    FieldNames,
     validateCreditCardNumber,
     validateExpiryDate,
     validateSecurityCode,
 } from "@/helpers";
 import { Lemon } from "next/font/google";
 
-enum FieldNames {
-    CardNumber = "number",
-    Expiration = "exp",
-    SecurityCode = "cvv",
-    Name = "name",
-    Zip = "zip",
-}
-
-export const PaymentForm = ({ onSubmit }: { onSubmit: () => void }) => {
-    const [fields, setFields] = useState<Record<FieldNames, string>>({
-        [FieldNames.CardNumber]: "",
-        [FieldNames.Expiration]: "",
-        [FieldNames.SecurityCode]: "",
-        [FieldNames.Name]: "",
-        [FieldNames.Zip]: "",
-    });
+export const PaymentForm = ({
+    fields,
+    setFields,
+    onSubmit,
+}: {
+    fields: Record<FieldNames, string>;
+    setFields: Dispatch<SetStateAction<Record<FieldNames, string>>>;
+    onSubmit: () => void;
+}) => {
     const [errors, setErrors] = useState<
         Record<FieldNames, { description: string; didError: boolean }>
     >({

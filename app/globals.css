@@ -6,6 +6,7 @@ body {
     color: rgb(var(--foreground-rgb));
     background: #F2F8FF;
     -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.2px;
 }
 
 @layer utilities {

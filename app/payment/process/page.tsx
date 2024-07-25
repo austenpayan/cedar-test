@@ -2,12 +2,15 @@
 
 import Button from "@/components/button";
 
-import { formatCurrency } from "@/helpers";
+import { FieldNames, formatCurrency } from "@/helpers";
 import styles from "@/styles.module.scss";
 import Image from "next/image";
 import data from "@/data.json";
 import { useState } from "react";
 import { PaymentForm } from "./payment-form";
+import { useRouter } from "next/navigation";
+import classNames from "classnames";
+import { SectionHeader } from "@/components/section-header";
 
 enum Step {
     Info = "info",
@@ -17,31 +20,57 @@ enum Step {
 const ProcessPage = () => {
     const [step, setStep] = useState<Step>(Step.Info);
 
-	const handleSubmit = () => {
-		setStep(Step.Review);
-	}
+    const [fields, setFields] = useState<Record<FieldNames, string>>({
+        [FieldNames.CardNumber]: "",
+        [FieldNames.Expiration]: "",
+        [FieldNames.SecurityCode]: "",
+        [FieldNames.Name]: "",
+        [FieldNames.Zip]: "",
+    });
+
+    const router = useRouter();
+
+    const handlePaymentFormSubmit = () => {
+        setStep(Step.Review);
+    };
+
+    const handleConfirmation = () => {
+        // This is where we might hit an API with the form values. For the purposes
+        // of this exercise, I'll just navigate to the "thank you" page as if the request was successful
+        router.push("/payment/thank-you");
+    };
+
+    const handleEditClick = () => {
+        setStep(Step.Info);
+    };
 
     return (
         <main className="flex flex-col flex-grow items-center justify-center">
             <div className={styles.card}>
                 <div className={styles.section}>
-                    <div className={styles.section__header}>
-                        <div className={styles.section__header_count}>1</div>
-                        <h2 className={styles.section__header_title}>
-                            Payment Information
-                        </h2>
-                    </div>
+                    <SectionHeader
+                        order={1}
+                        title="Payment information"
+                        onEdit={
+                            step !== Step.Info ? handleEditClick : undefined
+                        }
+                        isActive={step === Step.Info}
+                    />
                     {step === Step.Info && (
-                        <PaymentForm onSubmit={handleSubmit} />
+                        <PaymentForm
+                            fields={fields}
+                            setFields={setFields}
+                            onSubmit={handlePaymentFormSubmit}
+                        />
                     )}
                 </div>
                 <div className={styles.section}>
-                    <div className={styles.section__header}>
-                        <div className={styles.section__header_count}>2</div>
-                        <h2 className={styles.section__header_title}>
-                            Review and pay
-                        </h2>
-                    </div>
+                    <SectionHeader
+                        order={2}
+                        title="Review and pay"
+                        isDisabled={step !== Step.Review}
+                        isActive={step === Step.Review}
+                    />
                     {step === Step.Review && (
                         <>
                             <p className={styles.section__description}>
@@ -67,7 +96,9 @@ const ProcessPage = () => {
                                     Card ending in ••••4242
                                 </span>
                             </div>
-                            <Button>Pay $600</Button>
+                            <Button onClick={handleConfirmation}>
+                                Pay $600
+                            </Button>
                         </>
                     )}
                 </div>

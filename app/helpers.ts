@@ -23,3 +23,11 @@ export const validateSecurityCode = (code: string) => {
     const regex = /^\d{3,4}$/;
     return regex.test(code);
 };
+
+export enum FieldNames {
+    CardNumber = "number",
+    Expiration = "exp",
+    SecurityCode = "cvv",
+    Name = "name",
+    Zip = "zip",
+}

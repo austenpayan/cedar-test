@@ -1,5 +1,6 @@
 $brand: #13126c;
 $background: #ffffff;
+$background_sec: #E7E9EF;
 $primary: #3667e9;
 $error: #c34648;
 
@@ -43,7 +44,6 @@ $breakpoint_main: 786px;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0.2px;
     text-align: center;
 }
 
@@ -73,9 +73,22 @@ $breakpoint_main: 786px;
     border-radius: 12px;
     font-weight: 700;
     line-height: 24px;
-    letter-spacing: 0.2px;
     text-align: center;
     width: 100%;
+}
+
+.button__text {
+	background: none;
+	color: $primary;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+	padding: 0;
+	border: 0;
+	width: auto;
+	display: inline;
+	margin-left: auto;
 }
 
 .input {
@@ -124,7 +137,6 @@ $breakpoint_main: 786px;
     line-height: 20px;
     font-size: 14px;
     color: $text_sec;
-    letter-spacing: 0.2px;
     margin-bottom: 8px;
 }
 
@@ -171,6 +183,11 @@ $breakpoint_main: 786px;
     }
 }
 
+.section__header__disabled {
+	opacity: 50%;
+	filter: grayscale(1);
+}
+
 .section__header_count {
     width: 24px;
     height: 24px;
@@ -184,11 +201,15 @@ $breakpoint_main: 786px;
     justify-content: center;
 }
 
+.section__header_count__inactive {
+	background: $background_sec;
+	color: $text_sec;
+}
+
 .section__header_title {
     font-size: 20px;
     font-weight: bold;
     line-height: 24px;
-    letter-spacing: 0.2px;
     margin-left: 16px;
 }
 

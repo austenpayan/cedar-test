@@ -1,11 +1,20 @@
+"use client";
+
 import Button from "@/components/button";
 import { Hero } from "@/components/hero";
 import styles from "@/styles.module.scss";
 import classNames from "classnames";
 import data from "@/data.json";
 import { formatCurrency } from "@/helpers";
+import { useRouter } from "next/navigation";
 
 const PaymentPage = () => {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push("/payment/process");
+    };
+
     return (
         <main className="flex flex-col flex-grow">
             <Hero
@@ -23,7 +32,7 @@ const PaymentPage = () => {
                     )}`}</div>
                 </div>
                 <div className="max-w-sm m-auto mt-5">
-                    <Button>Pay total</Button>
+                    <Button onClick={handleClick}>Pay total</Button>
                 </div>
             </div>
         </main>
