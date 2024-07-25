@@ -136,7 +136,12 @@ export const PaymentForm = ({
     };
 
     return (
-        <form onSubmit={handleSubmit} autoComplete="off" noValidate>
+        <form
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            noValidate
+            name="Payment form"
+        >
             <FormField
                 label="Card number"
                 errorMessage={errors[FieldNames.CardNumber].description}

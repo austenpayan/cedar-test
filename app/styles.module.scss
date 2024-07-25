@@ -153,9 +153,9 @@ $breakpoint_main: 786px;
     overflow: hidden;
     width: 100%;
     max-width: 576px;
+	margin: 0;
 
-    @media (min-width: $breakpoint_main) {
-        width: 576px;
+    @media (min-width: 576px) {
         border-radius: 16px;
 		margin: 32px 0;
     }

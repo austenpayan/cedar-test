@@ -42,6 +42,8 @@ export const Input = ({
 				required={isRequired}
 				onFocus={handleFocus}
 				onBlur={handleBlur}
+				aria-required={isRequired}
+				aria-invalid={didError}
             />
             {didError && (
                 <Image

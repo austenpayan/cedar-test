@@ -45,7 +45,7 @@ const ProcessPage = () => {
     };
 
     return (
-        <main className="flex flex-col flex-grow items-center justify-center">
+        <main className="flex flex-col flex-grow items-center justify-start sm:justify-center">
             <div className={styles.card}>
                 <div className={styles.section}>
                     <SectionHeader
