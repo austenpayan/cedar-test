@@ -1,8 +1,8 @@
 import Button from "@/components/button";
 import { Hero } from "@/components/hero";
-import styles from "../styles.module.scss";
+import styles from "@/styles.module.scss";
 import classNames from "classnames";
-import data from "../data.json";
+import data from "@/data.json";
 import { formatCurrency } from "@/helpers";
 
 const PaymentPage = () => {

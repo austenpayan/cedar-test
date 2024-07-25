@@ -84,10 +84,9 @@ $breakpoint_main: 786px;
     padding: 12px 16px 12px 16px;
     border-radius: 8px;
 
-    &:focus {
+    &:not(.input__error):focus {
         border-color: $primary;
         outline: 1px solid $primary;
-
         outline-offset: 0px;
     }
 }
@@ -127,6 +126,14 @@ $breakpoint_main: 786px;
     color: $text_sec;
     letter-spacing: 0.2px;
     margin-bottom: 8px;
+}
+
+.field__error {
+	display: block;
+	color: $error;
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 12px;
 }
 
 .card {
