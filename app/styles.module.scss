@@ -75,6 +75,11 @@ $breakpoint_main: 786px;
     line-height: 24px;
     text-align: center;
     width: 100%;
+
+	&:focus {
+		outline: 3px solid lighten($primary, 20%);
+        outline-offset: 0px;
+	}
 }
 
 .button__text {
