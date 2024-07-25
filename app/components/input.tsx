@@ -4,30 +4,30 @@ import classNames from "classnames";
 import Image from "next/image";
 
 export const Input = ({
-	onChange,
-	name,
-	onBlur,
-	value,
+    onChange,
+    name,
+    onBlur,
+    value,
     didError = false,
-	isRequired = false,
+    isRequired = false,
 }: {
-	name: string;
-	value: string;
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    name: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     didError?: boolean;
-	isRequired?: boolean;
-	onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+    isRequired?: boolean;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }) => {
-	const [isFocused, setIsFocused] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
 
-	const handleFocus = () => {
-		setIsFocused(true);
-	}
+    const handleFocus = () => {
+        setIsFocused(true);
+    };
 
-	const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-		setIsFocused(false);
-		onBlur?.(e);
-	}
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        setIsFocused(false);
+        onBlur?.(e);
+    };
 
     return (
         <div className={styles.input__container}>
@@ -35,15 +35,15 @@ export const Input = ({
                 className={classNames(styles.input, {
                     [styles.input__error]: didError,
                 })}
-				value={value}
-				name={name}
+                value={value}
+                name={name}
                 type="text"
-				onChange={onChange}
-				required={isRequired}
-				onFocus={handleFocus}
-				onBlur={handleBlur}
-				aria-required={isRequired}
-				aria-invalid={didError}
+                onChange={onChange}
+                required={isRequired}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                aria-required={isRequired}
+                aria-invalid={didError}
             />
             {didError && (
                 <Image

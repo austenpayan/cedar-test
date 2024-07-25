@@ -1,14 +1,14 @@
 import styles from "../styles.module.scss";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 export const Hero = ({
     title,
     description,
-	className,
+    className,
 }: {
     title: string;
     description?: string;
-	className?: string;
+    className?: string;
 }) => {
     return (
         <div className={classNames(styles.hero, className)}>

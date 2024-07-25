@@ -24,7 +24,7 @@ const Button = ({
                 className
             )}
             onClick={onClick}
-			value={type === "submit" ? "submit" : undefined}
+            value={type === "submit" ? "submit" : undefined}
         >
             {children}
         </button>

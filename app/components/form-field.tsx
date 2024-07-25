@@ -14,7 +14,9 @@ export const FormField = ({
         <label className={styles.field}>
             <span className={styles.field__label}>{label}</span>
             {children}
-            {errorMessage && <span className={styles.field__error}>{errorMessage}</span>}
+            {errorMessage && (
+                <span className={styles.field__error}>{errorMessage}</span>
+            )}
         </label>
     );
 };

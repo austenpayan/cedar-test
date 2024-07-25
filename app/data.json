@@ -1,32 +1,32 @@
 {
-	"patient": {
-		"firstName": "Taylor",
-		"lastName": "Doe"
-	},
-	"bills": [
-		{
-			"id": "B123456x1",
-			"amount": 15000
-		},
-		{
-			"id": "B123456x2",
-			"amount": 10000
-		},
-		{
-			"id": "B123456x3",
-			"amount": 10000
-		},
-		{
-			"id": "B123456x4",
-			"amount": 5000
-		},
-		{
-			"id": "B123456x5",
-			"amount": 10000
-		},
-		{
-			"id": "B123456x6",
-			"amount": 10000
-		}
-	]
+    "patient": {
+        "firstName": "Taylor",
+        "lastName": "Doe"
+    },
+    "bills": [
+        {
+            "id": "B123456x1",
+            "amount": 15000
+        },
+        {
+            "id": "B123456x2",
+            "amount": 10000
+        },
+        {
+            "id": "B123456x3",
+            "amount": 10000
+        },
+        {
+            "id": "B123456x4",
+            "amount": 5000
+        },
+        {
+            "id": "B123456x5",
+            "amount": 10000
+        },
+        {
+            "id": "B123456x6",
+            "amount": 10000
+        }
+    ]
 }
