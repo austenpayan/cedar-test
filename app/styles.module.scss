@@ -1,0 +1,194 @@
+$brand: #13126c;
+$background: #ffffff;
+$primary: #3667e9;
+$error: #c34648;
+
+$text_inv: #ffffff;
+$text_sec: #65657b;
+
+$breakpoint_main: 786px;
+
+.navigation {
+    background: #ffffff;
+    border-bottom: 1px solid #e7e9ef;
+    height: 80px;
+	padding-left: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.hero {
+    width: 100%;
+    padding: 96px 25px 48px 25px;
+    margin: auto;
+
+    @media (min-width: 375px) {
+        width: 376px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.hero__title {
+    color: $brand;
+    font-family: Georgia, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+}
+
+.hero__description {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+.subsection {
+    width: 100%;
+    padding: 32px;
+    border-radius: 32px 32px 0px 0px;
+    background-color: $background;
+}
+
+.button {
+    // some resets
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+
+    background: $primary;
+    color: $text_inv;
+    padding: 12px 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 100%;
+}
+
+.input {
+    border: 1px solid #6d7088;
+    height: 48px;
+    padding: 12px 16px 12px 16px;
+    border-radius: 8px;
+
+    &:focus {
+        border-color: $primary;
+        outline: 1px solid $primary;
+
+        outline-offset: 0px;
+    }
+}
+
+.input__container {
+    position: relative;
+}
+
+.input__error {
+    border-color: $error;
+    outline: 1px solid $error;
+    outline-offset: 0px;
+}
+
+.input__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0%, -50%);
+}
+
+.field {
+    margin-bottom: 18px;
+    margin-top: 2px;
+    display: block;
+
+    &:last-of-type {
+        margin-bottom: 30px;
+    }
+}
+
+.field__label {
+    display: block;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 14px;
+    color: $text_sec;
+    letter-spacing: 0.2px;
+    margin-bottom: 8px;
+}
+
+.card {
+    background: $background;
+    overflow: hidden;
+    width: 100%;
+    max-width: 576px;
+
+    @media (min-width: $breakpoint_main) {
+        width: 576px;
+        border-radius: 16px;
+		margin: 32px 0;
+    }
+}
+
+.section {
+    padding: 32px;
+
+    @media (min-width: $breakpoint_main) {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    &:not(:first-child) {
+        border-top: 1px solid #e7e9ef;
+    }
+}
+
+.section__header {
+    display: flex;
+
+    // Only give bottom margin if the header is not an orphan
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.section__header_count {
+    width: 24px;
+    height: 24px;
+    background: $primary;
+    border-radius: 50%;
+    color: $text_inv;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section__header_title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-left: 16px;
+}
+
+.section__description {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2;
+	margin-bottom: 30px;
+}
